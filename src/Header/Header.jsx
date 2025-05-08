@@ -1,11 +1,20 @@
-import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
+  const nav = useNavigate();
+
   return (
     <div>
-      <div>Logo</div>
-      <div>Our Services</div>
-      <div>Contact Us!</div>
+      <div>
+        <h1 onClick={() => nav('/')}>Yardshapers</h1>
+      </div>
+      <div>
+        <Link to='/services'>Our Services</Link>
+      </div>
+      <div>
+        <Link to='/contact-us'>Contact Us!</Link>
+      </div>
     </div>
   )
 }
