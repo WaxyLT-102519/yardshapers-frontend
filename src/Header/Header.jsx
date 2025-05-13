@@ -8,7 +8,7 @@ const Container = styled.div`
   align-items: center;
   padding-left: 1em;
   padding-right: 1em;
-  background-color: #22f;
+  background-color: ${props => props.theme.primary};
   color: white;
 `
 
