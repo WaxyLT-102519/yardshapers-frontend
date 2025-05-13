@@ -9,7 +9,7 @@ import Footer from './Footer/Footer';
 
 const theme = {
   primary: '#22f',
-  muted: '#11e'
+  muted: '#008'
 }
 
 function App() {
