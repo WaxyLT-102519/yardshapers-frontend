@@ -16,6 +16,7 @@ const Container = styled.div`
 const CopyrightInfo = styled.small`
   display: flex;
   align-items: center;
+  margin-bottom: 1em;
 `
 
 const IconContainer = styled.div`
