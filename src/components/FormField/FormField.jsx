@@ -9,7 +9,7 @@ const Container = styled.div`
 const FormField = ({children, fieldId, inputAttributes}) => {
   return (
     <Container>
-      <label htmlFor={fieldId}><small>{children}</small></label>
+      <label htmlFor={fieldId}>{children}</label>
       <input {...inputAttributes}/>
     </Container>
   )

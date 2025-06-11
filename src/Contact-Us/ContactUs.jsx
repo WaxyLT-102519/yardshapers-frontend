@@ -18,6 +18,7 @@ const Card = styled.div`
   padding: 3em;
   box-shadow: ${props => props.theme.card.shadow};
   border-radius: ${props => props.theme.card.border};
+  width: 75%;
 `
 
 const JobRequestForm = styled.form`
@@ -25,6 +26,7 @@ const JobRequestForm = styled.form`
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
+  width: 100%;
 `
 
 const ContactUs = () => {
@@ -130,6 +132,13 @@ const ContactUs = () => {
               </FormField>
             )
           })}
+          <label htmlFor="description">How Can We Help You?</label>
+          <textarea 
+            id="description"
+            name="description"
+            value={jobRequest.description}
+            onChange={updateForm}
+          />
           <button type="submit">Submit</button>
         </JobRequestForm>
       </Card>
