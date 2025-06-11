@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import useRedirect from '../hooks/useRedirect'
+import useRedirect from '../../hooks/useRedirect'
 import { FaFacebook, FaCopyright, FaPhone } from 'react-icons/fa'
 import styled from 'styled-components'
 

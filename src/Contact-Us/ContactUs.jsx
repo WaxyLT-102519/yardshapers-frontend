@@ -1,5 +1,7 @@
-import { useState } from "react"
 import styled from "styled-components"
+import useForm from "../hooks/useForm"
+
+import FormField from "../components/FormField/FormField"
 
 const Container = styled.div`
   display: flex;
@@ -29,33 +31,111 @@ const ContactUs = () => {
     lastName: '',
     phoneNumber: '',
     email: '',
+    address: '',
+    address2: '',
+    zipCode: '',
     description: ''
   }
 
-  const [jobRequest, setJobRequest] = useState(emptyJobRequest)
+  const [jobRequest, submit, updateForm] = useForm(emptyJobRequest)
 
-  const submit = (e) => {
-    e.preventDefault()
-    console.log(jobRequest)
-  }
-
-  const updateForm = (e) => {
-    setJobRequest({...jobRequest, [e.target.name]: e.target.value})
-  }
+  const inputTags = [
+    {
+      htmlId: 'first-name',
+      label: 'First Name',
+      attributes: {
+        type: 'text',
+        name: 'firstName',
+        value: jobRequest.firstName,
+        onChange: updateForm
+      }
+    },
+    {
+      htmlId: 'last-name',
+      label: 'Last Name',
+      attributes: {
+        type: 'text',
+        name: 'lastName',
+        value: jobRequest.lastName,
+        onChange: updateForm
+      }
+    },
+    {
+      htmlId: 'phone-number',
+      label: 'Phone Number',
+      attributes: {
+        type: 'tel',
+        name: 'phoneNumber',
+        value: jobRequest.phoneNumber,
+        onChange: updateForm
+      }
+    },
+    {
+      htmlId: 'email',
+      label: 'Email',
+      attributes: {
+        type: 'email',
+        name: 'email',
+        value: jobRequest.email,
+        onChange: updateForm
+      }
+    },
+    {
+      htmlId: 'address',
+      label: 'Address',
+      attributes: {
+        type: 'text',
+        name: 'address',
+        value: jobRequest.address,
+        onChange: updateForm
+      }
+    },
+    {
+      htmlId: 'address-2',
+      label: 'Address (cont.)',
+      attributes: {
+        type: 'text',
+        name: 'address-2',
+        value: jobRequest.address2,
+        onChange: updateForm
+      }
+    },
+    {
+      htmlId: 'zip-code',
+      label: 'Zip Code',
+      attributes: {
+        type: 'number',
+        name: 'zipCode',
+        value: jobRequest.zipCode,
+        onChange: updateForm
+      }
+    }
+  ]
 
   return (
     <Container>
       <Card>
         <JobRequestForm onSubmit={submit}>
-          <label htmlFor="first-name">First Name</label>
-          <input 
-            id="first-name" 
-            type="text" 
-            name="firstName"
-            value={jobRequest.firstName} 
-            onChange={updateForm} 
-          />
-          <label htmlFor="last-name">Last Name</label>
+          {inputTags.map((input, i) => {
+            return (
+              <FormField 
+                key={i} 
+                fieldId={input.htmlId} 
+                inputAttributes={input.attributes}
+              >
+                {input.label}
+              </FormField>
+            )
+          })}
+          {/* <FormField fieldId="first-name" inputAttributes={{
+            type: 'text',
+            name: 'firstName',
+            value: jobRequest.firstName,
+            onChange: updateForm
+          }}>
+            First Name
+          </FormField> */}
+          {/* <label htmlFor="last-name">Last Name</label>
           <input 
             id="last-name" 
             type="text" 
@@ -85,7 +165,7 @@ const ContactUs = () => {
             name="description"
             value={jobRequest.description}
             onChange={updateForm}
-          />
+          /> */}
           <button type="submit">Submit</button>
         </JobRequestForm>
       </Card>
