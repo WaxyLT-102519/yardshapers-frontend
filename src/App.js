@@ -9,7 +9,11 @@ import ContactUs from './Contact-Us/ContactUs'
 
 const theme = {
   primary: '#22f',
-  muted: '#008'
+  muted: '#008',
+  card: {
+    border: '50px',
+    shadow: '0 0 10px rgba(0, 0, 0, 0.5)'
+  } 
 }
 
 function App() {
