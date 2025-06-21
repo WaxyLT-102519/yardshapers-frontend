@@ -4,6 +4,7 @@ const Container = styled.div`
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
+  padding-top: 20px;
   width: 100%;
 `
 

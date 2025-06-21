@@ -7,16 +7,20 @@ body {
 
 button {
   box-sizing: border-box;
+
   margin-top: 10px;
-  padding: 5px;
+  padding: 5px 15px 5px 15px;
   border: 2px solid #22f;
   border-radius: 10px;
   width: fit-content;
   min-width: 75px;
   background: white;
   color: #22f;
+
   font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif;
+  font-size: large;
   font-weight: bold;
+  
   transition: 100ms;
   &:hover {
     background: #22f;
@@ -25,9 +29,14 @@ button {
   }
 }
 
+label {
+  font-size: larger;
+}
+
 input, textarea {
   box-sizing: border-box;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: larger;
 }
 
 code {

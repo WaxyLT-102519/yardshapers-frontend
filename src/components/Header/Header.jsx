@@ -6,8 +6,8 @@ const Container = styled.div`
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: 3em;
+  padding-right: 3em;
   background-color: ${props => props.theme.primary};
   color: white;
 `
@@ -16,13 +16,17 @@ const Logo = styled.h1`
   cursor: pointer;
 `
 
-const LinkContainer = styled(Container)`
-  width: 15%;
+const LinkContainer = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  width: 30%;
 `
 
 const LinkWrapper = styled(Link)`
   color: white;
-  font-weight: bolder;
+  font-weight: bold;
+  font-size: larger;
   text-decoration: none;
   transition: 500ms;
   &:hover {

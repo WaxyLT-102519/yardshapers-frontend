@@ -12,6 +12,7 @@ const Container = styled.div`
 
 const Card = styled.div`
   display: flex;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   margin: 20px;
@@ -21,11 +22,25 @@ const Card = styled.div`
   width: 75%;
 `
 
+const FormTitle = styled.span`
+  font-size: x-large;
+`
+
+const HorizontalRule = styled.div`
+  border-top: 2px solid black;
+  width: 100%;
+  max-height: 0;
+`
+
 const JobRequestForm = styled.form`
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   width: 100%;
+`
+
+const TextAreaContainer = styled.div`
+  padding-top: 20px;
 `
 
 const TextArea = styled.textarea`
@@ -91,6 +106,8 @@ const ContactUs = () => {
   return (
     <Container>
       <Card>
+        <FormTitle>Add Curb Appeal to Your Lawn Today!</FormTitle>
+        <HorizontalRule></HorizontalRule>
         <JobRequestForm onSubmit={submit}>
           {inputTags.map((input, i) => {
             return (
@@ -103,14 +120,16 @@ const ContactUs = () => {
               </FormField>
             )
           })}
-          <label htmlFor="description">How Can We Help You?</label>
-          <TextArea 
-            id="description"
-            name="description"
-            rows="5"
-            value={jobRequest.description}
-            onChange={updateForm}
-          />
+          <TextAreaContainer>
+            <label htmlFor="description">How Can We Help You?</label>
+            <TextArea 
+              id="description"
+              name="description"
+              rows="5"
+              value={jobRequest.description}
+              onChange={updateForm}
+            />
+          </TextAreaContainer>
           <button type="submit">Submit</button>
         </JobRequestForm>
       </Card>
