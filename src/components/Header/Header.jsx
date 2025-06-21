@@ -20,13 +20,14 @@ const LinkContainer = styled.div`
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  width: 30%;
+  width: 20%;
 `
 
 const LinkWrapper = styled(Link)`
   color: white;
   font-weight: bold;
   font-size: larger;
+  text-align: center;
   text-decoration: none;
   transition: 500ms;
   &:hover {
