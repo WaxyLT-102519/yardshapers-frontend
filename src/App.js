@@ -16,7 +16,7 @@ const theme = {
       radius: '50px',
     },
     shadow: '0 0 10px rgba(0, 0, 0, 0.5)'
-  } 
+  }
 }
 
 function App() {
