@@ -25,7 +25,6 @@ const JobRequestForm = styled.form`
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
-  align-items: center;
   width: 100%;
 `
 
