@@ -11,9 +11,12 @@ const theme = {
   primary: '#22f',
   muted: '#008',
   card: {
-    border: '50px',
+    border: {
+      style: '3px solid #22f',
+      radius: '50px',
+    },
     shadow: '0 0 10px rgba(0, 0, 0, 0.5)'
-  } 
+  }
 }
 
 function App() {

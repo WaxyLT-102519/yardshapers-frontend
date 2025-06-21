@@ -12,20 +12,39 @@ const Container = styled.div`
 
 const Card = styled.div`
   display: flex;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   margin: 20px;
   padding: 3em;
-  box-shadow: ${props => props.theme.card.shadow};
-  border-radius: ${props => props.theme.card.border};
+  border: ${props => props.theme.card.border.style};
+  border-radius: ${props => props.theme.card.border.radius};
   width: 75%;
+`
+
+const FormTitle = styled.span`
+  font-size: x-large;
+`
+
+const HorizontalRule = styled.div`
+  border-top: 2px solid black;
+  width: 100%;
+  max-height: 0;
 `
 
 const JobRequestForm = styled.form`
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
-  align-items: center;
+  width: 100%;
+`
+
+const TextAreaContainer = styled.div`
+  padding-top: 20px;
+`
+
+const TextArea = styled.textarea`
+  resize: none;
   width: 100%;
 `
 
@@ -36,9 +55,6 @@ const ContactUs = () => {
     lastName: '',
     phoneNumber: '',
     email: '',
-    address: '',
-    address2: '',
-    zipCode: '',
     description: ''
   }
 
@@ -84,42 +100,14 @@ const ContactUs = () => {
         value: jobRequest.email,
         onChange: updateForm
       }
-    },
-    {
-      htmlId: 'address',
-      label: 'Address',
-      attributes: {
-        type: 'text',
-        name: 'address',
-        value: jobRequest.address,
-        onChange: updateForm
-      }
-    },
-    {
-      htmlId: 'address-2',
-      label: 'Address (cont.)',
-      attributes: {
-        type: 'text',
-        name: 'address-2',
-        value: jobRequest.address2,
-        onChange: updateForm
-      }
-    },
-    {
-      htmlId: 'zip-code',
-      label: 'Zip Code',
-      attributes: {
-        type: 'number',
-        name: 'zipCode',
-        value: jobRequest.zipCode,
-        onChange: updateForm
-      }
     }
   ]
 
   return (
     <Container>
       <Card>
+        <FormTitle>Add Curb Appeal to Your Lawn Today!</FormTitle>
+        <HorizontalRule></HorizontalRule>
         <JobRequestForm onSubmit={submit}>
           {inputTags.map((input, i) => {
             return (
@@ -132,13 +120,16 @@ const ContactUs = () => {
               </FormField>
             )
           })}
-          <label htmlFor="description">How Can We Help You?</label>
-          <textarea 
-            id="description"
-            name="description"
-            value={jobRequest.description}
-            onChange={updateForm}
-          />
+          <TextAreaContainer>
+            <label htmlFor="description">How Can We Help You?</label>
+            <TextArea 
+              id="description"
+              name="description"
+              rows="5"
+              value={jobRequest.description}
+              onChange={updateForm}
+            />
+          </TextAreaContainer>
           <button type="submit">Submit</button>
         </JobRequestForm>
       </Card>
