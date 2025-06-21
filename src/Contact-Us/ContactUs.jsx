@@ -16,8 +16,8 @@ const Card = styled.div`
   align-items: center;
   margin: 20px;
   padding: 3em;
-  box-shadow: ${props => props.theme.card.shadow};
-  border-radius: ${props => props.theme.card.border};
+  border: ${props => props.theme.card.border.style};
+  border-radius: ${props => props.theme.card.border.radius};
   width: 75%;
 `
 
@@ -29,6 +29,11 @@ const JobRequestForm = styled.form`
   width: 100%;
 `
 
+const TextArea = styled.textarea`
+  resize: none;
+  width: 100%;
+`
+
 const ContactUs = () => {
 
   const emptyJobRequest = {
@@ -36,9 +41,6 @@ const ContactUs = () => {
     lastName: '',
     phoneNumber: '',
     email: '',
-    address: '',
-    address2: '',
-    zipCode: '',
     description: ''
   }
 
@@ -84,36 +86,6 @@ const ContactUs = () => {
         value: jobRequest.email,
         onChange: updateForm
       }
-    },
-    {
-      htmlId: 'address',
-      label: 'Address',
-      attributes: {
-        type: 'text',
-        name: 'address',
-        value: jobRequest.address,
-        onChange: updateForm
-      }
-    },
-    {
-      htmlId: 'address-2',
-      label: 'Address (cont.)',
-      attributes: {
-        type: 'text',
-        name: 'address-2',
-        value: jobRequest.address2,
-        onChange: updateForm
-      }
-    },
-    {
-      htmlId: 'zip-code',
-      label: 'Zip Code',
-      attributes: {
-        type: 'number',
-        name: 'zipCode',
-        value: jobRequest.zipCode,
-        onChange: updateForm
-      }
     }
   ]
 
@@ -133,9 +105,10 @@ const ContactUs = () => {
             )
           })}
           <label htmlFor="description">How Can We Help You?</label>
-          <textarea 
+          <TextArea 
             id="description"
             name="description"
+            rows="5"
             value={jobRequest.description}
             onChange={updateForm}
           />
