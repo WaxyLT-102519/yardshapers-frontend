@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
-// Notched edges of the card
+// TODO: CHANGE THE STYLES TO A SEMI CIRCLE
+// semicircle dome top
 const PsuedoBorder = styled.div`
   display: flex;
   flex-flow: column nowrap;
