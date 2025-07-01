@@ -12,6 +12,7 @@ const theme = {
   muted: '#008',
   card: {
     border: {
+      hovered: '10px solid white',
       style: '3px solid #22f',
       radius: '50px',
     },
