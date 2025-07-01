@@ -1,10 +1,16 @@
 import styled from "styled-components"
 
+// Rounded blue square card
 const Card = styled.div`
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  border: ${props => props.theme.card.border.style};
+  border-radius: ${props => props.theme.card.border.radius};
+  padding: 20px;
+  width: 350px;
+  height: 350px;
 `
 
 const ImgContainer = styled.div`
