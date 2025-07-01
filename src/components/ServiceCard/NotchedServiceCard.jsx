@@ -54,7 +54,7 @@ const Img = styled.img`
   height: 250px;
 `
 
-const FilletedServiceCard = ({service}) => {
+const NotchedServiceCard = ({service}) => {
   return (
     <PsuedoBorder>
       <Card>
@@ -67,4 +67,4 @@ const FilletedServiceCard = ({service}) => {
   )
 }
 
-export default FilletedServiceCard
+export default NotchedServiceCard

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 import services from "../../modules/services"
-import FilletedServiceCard from "../../components/ServiceCard/FilletedServiceCard"
+import NotchedServiceCard from "../../components/ServiceCard/NotchedServiceCard"
 
 const Grid = styled.div`
   display: grid;
@@ -16,7 +16,7 @@ const Services = () => {
 
   return (
     <Grid>
-      {services.map(svc => <FilletedServiceCard key={svc.id} service={svc} />)}
+      {services.map(svc => <NotchedServiceCard key={svc.id} service={svc} />)}
     </Grid>
   )
 }
