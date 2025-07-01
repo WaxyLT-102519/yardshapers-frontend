@@ -32,13 +32,13 @@ const ImgContainer = styled.div`
   align-items: center;
   border: ${props => props.theme.card.border.style};
   border-radius: 50%;
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
   overflow: hidden;
 `
 
 const Img = styled.img`
-  height: 250px;
+  height: 300px;
 `
 
 const SemiCircleServiceCard = ({service}) => {

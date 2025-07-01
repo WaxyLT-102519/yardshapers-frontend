@@ -20,9 +20,9 @@ const Services = () => {
 
   return (
     <div>
-      <button onClick={(e) => setDemoCard("rounded")}>Rounded border</button>
-      <button onClick={(e) => setDemoCard("notched")}>Notched border</button>
-      <button onClick={(e) => setDemoCard("dometop")}>Dome Top border</button>
+      <button onClick={() => setDemoCard("rounded")}>Rounded border</button>
+      <button onClick={() => setDemoCard("notched")}>Notched border</button>
+      <button onClick={() => setDemoCard("dometop")}>Dome Top border</button>
       <Grid>
         {services.map(svc => {
           let card = undefined
