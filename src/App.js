@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 
-import Home from './Home/Home'
+import Home from './pages/Home/Home'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
-import Services from './Services/Services'
-import ContactUs from './Contact-Us/ContactUs'
+import Services from './pages/Services/Services'
+import ContactUs from './pages/Contact-Us/ContactUs'
 
 const theme = {
   primary: '#22f',

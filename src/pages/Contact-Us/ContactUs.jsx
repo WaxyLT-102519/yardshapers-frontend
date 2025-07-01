@@ -1,7 +1,7 @@
 import styled from "styled-components"
-import useForm from "../hooks/useForm"
+import useForm from "../../hooks/useForm"
 
-import FormField from "../components/FormField/FormField"
+import FormField from "../../components/FormField/FormField"
 
 const Container = styled.div`
   display: flex;
