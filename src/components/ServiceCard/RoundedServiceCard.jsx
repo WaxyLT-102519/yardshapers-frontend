@@ -11,6 +11,7 @@ const Card = styled.div`
   padding: 20px;
   width: 400px;
   height: 400px;
+  background-color: white;
   transition: 200ms;
   &:hover {
     background-color: ${props => props.theme.primary};
