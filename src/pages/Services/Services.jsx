@@ -18,6 +18,8 @@ const Services = () => {
   
   const [demoCard, setDemoCard] = useState("")
 
+  // The goal is for dad to pick out which ones he likes and then I'll
+  // keep that one as the main service card
   return (
     <div>
       <button onClick={() => setDemoCard("rounded")}>Rounded border</button>
