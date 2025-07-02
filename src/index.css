@@ -3,6 +3,7 @@ body {
   font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("assets/solid.webp");
 }
 
 button {
@@ -22,7 +23,7 @@ button {
   font-weight: bold;
   
   transition: 100ms;
-  &:hover {
+  &:hover, &:focus {
     background: #22f;
     color: white;
     transition: 200ms;
@@ -34,9 +35,16 @@ label {
 }
 
 input, textarea {
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 10px;
   box-sizing: border-box;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: larger;
+  transition: 200ms;
+  &:focus {
+    border-color: #22f;
+  }
 }
 
 code {

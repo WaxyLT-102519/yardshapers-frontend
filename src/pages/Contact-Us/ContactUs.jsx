@@ -20,6 +20,7 @@ const Card = styled.div`
   border: ${props => props.theme.card.border.style};
   border-radius: ${props => props.theme.card.border.radius};
   width: 75%;
+  background-color: white;
 `
 
 const FormTitle = styled.span`

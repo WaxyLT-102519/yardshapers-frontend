@@ -9,8 +9,20 @@ const Card = styled.div`
   border: ${props => props.theme.card.border.style};
   border-radius: ${props => props.theme.card.border.radius};
   padding: 20px;
-  width: 350px;
-  height: 350px;
+  width: 400px;
+  height: 400px;
+  background-color: white;
+  transition: 200ms;
+  &:hover {
+    background-color: ${props => props.theme.primary};
+    color: white;
+    transition: 200ms;
+  }
+
+  &:hover div {
+    border: ${props => props.theme.card.border.hovered};
+    transition: 200ms;
+  }
 `
 
 const ImgContainer = styled.div`
@@ -18,14 +30,15 @@ const ImgContainer = styled.div`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  border: ${props => props.theme.card.border.style};
   border-radius: 50%;
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
   overflow: hidden;
 `
 
 const Img = styled.img`
-  height: 250px;
+  height: 300px;
 `
 
 const RoundedServiceCard = ({service}) => {

@@ -1,43 +1,28 @@
 import styled from "styled-components"
 
-// TODO: CHANGE THE STYLES TO A SEMI CIRCLE
 // semicircle dome top
-const PsuedoBorder = styled.div`
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  clip-path: polygon(
-    0 20%,
-    10% 0,
-    100% 0,
-    100% 80%,
-    90% 100%,
-    0% 100%
-  );
-  padding: 20px;
-  width: 360px;
-  height: 360px;
-  background-color: ${props => props.theme.primary};
-`
-
 const Card = styled.div`
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  clip-path: polygon(
-    0 20%,
-    10% 0,
-    100% 0,
-    100% 80%,
-    90% 100%,
-    0% 100%
-  );
+  border: ${props => props.theme.card.border.style};
+  border-radius: 400px 400px 25px 25px;
   padding: 20px;
-  width: 350px;
-  height: 350px;
+  width: 400px;
+  height: 500px;
   background-color: white;
+  transition: 200ms;
+  &:hover {
+    background-color: ${props => props.theme.primary};
+    color: white;
+    transition: 200ms;
+  }
+
+  &:hover div {
+    border: ${props => props.theme.card.border.hovered};
+    transition: 200ms;
+  }
 `
 
 const ImgContainer = styled.div`
@@ -45,26 +30,25 @@ const ImgContainer = styled.div`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  border: ${props => props.theme.card.border.style};
   border-radius: 50%;
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
   overflow: hidden;
 `
 
 const Img = styled.img`
-  height: 250px;
+  height: 300px;
 `
 
 const SemiCircleServiceCard = ({service}) => {
   return (
-    <PsuedoBorder>
-      <Card>
-        <ImgContainer>
-          <Img src={service.src} alt={service.label} />
-        </ImgContainer>
-        <h2>{service.label}</h2>
-      </Card>
-    </PsuedoBorder>
+    <Card>
+      <ImgContainer>
+        <Img src={service.src} alt={service.label} />
+      </ImgContainer>
+      <h2>{service.label}</h2>
+    </Card>
   )
 }
 
