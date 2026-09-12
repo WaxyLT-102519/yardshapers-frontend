@@ -2,56 +2,20 @@ import { createGlobalStyle } from 'styled-components'
 import { concreteBackground } from '../assets'
 
 export const GlobalStyle = createGlobalStyle`
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
   font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url(${concreteBackground});
 }
 
-button {
-  box-sizing: border-box;
-
-  margin-top: 10px;
-  padding: 5px 15px 5px 15px;
-  border: 2px solid #22f;
-  border-radius: 10px;
-  width: fit-content;
-  min-width: 75px;
-  background: white;
-  color: #22f;
-
-  font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif;
-  font-size: large;
-  font-weight: bold;
-  
-  transition: 100ms;
-  &:hover, &:focus {
-    background: #22f;
-    color: white;
-    transition: 200ms;
-  }
-}
-
 label {
   font-size: larger;
 }
-
-input, textarea {
-  padding: 5px;
-  border: 2px solid black;
-  border-radius: 10px;
-  box-sizing: border-box;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: larger;
-  transition: 200ms;
-  &:focus {
-    border-color: #22f;
-  }
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}`
+`
