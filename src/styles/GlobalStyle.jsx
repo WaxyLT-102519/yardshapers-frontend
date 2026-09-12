@@ -1,9 +1,13 @@
+import { createGlobalStyle } from 'styled-components'
+import { concreteBackground } from '../assets'
+
+export const GlobalStyle = createGlobalStyle`
 body {
   margin: 0;
   font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("assets/solid.webp");
+  background-image: url(${concreteBackground});
 }
 
 button {
@@ -50,4 +54,4 @@ input, textarea {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+}`
