@@ -1,11 +1,8 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 
-import Home from './pages/Home/Home'
-import Header from './layouts/Header/Header'
-import Footer from './layouts/Footer/Footer'
-import Services from './pages/Services/Services'
-import ContactUs from './pages/Contact-Us/ContactUs'
+import MainLayout from './layouts/MainLayout'
+import AppRoutes from './routes/AppRoutes'
 
 const theme = {
   primary: '#22f',
@@ -24,13 +21,9 @@ function App() {
   return (
     <BrowserRouter>
       <ThemeProvider theme={theme}>
-        <Header />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/services' element={<Services />} />
-        <Route path='/contact-us' element={<ContactUs />} />
-      </Routes>
-      <Footer />
+        <MainLayout>
+          <AppRoutes />
+        </MainLayout>
       </ThemeProvider>
     </BrowserRouter>
 
