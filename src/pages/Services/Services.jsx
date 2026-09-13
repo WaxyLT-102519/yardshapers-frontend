@@ -1,7 +1,7 @@
 import { useState } from "react"
 import styled from "styled-components"
 
-import services from "../../modules/services"
+import services from "../../data/services"
 import RoundedServiceCard from "../../components/ServiceCard/RoundedServiceCard"
 import NotchedServiceCard from "../../components/ServiceCard/NotchedServiceCard"
 import SemiCircleServiceCard from "../../components/ServiceCard/SemiCircleServiceCard"
